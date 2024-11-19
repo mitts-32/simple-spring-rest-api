@@ -1,0 +1,29 @@
+spring:
+  # application:
+  #   name: simple-spring-boot-api
+  # devtools:
+  #   remote:
+  #     restart:
+  #       enabled: true
+  #   livereload:
+  #     enabled: true
+
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        hdm2dll:
+          create_namespaces: true
+    # generate-ddl: true
+    # properties:
+    #   hibernate:
+    #     dialect: org.hibernate.dialect.SQLServerDialect
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:postgres}:${POSTGRES_PORT:5432}/${POSTGRES_DB:dev}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
